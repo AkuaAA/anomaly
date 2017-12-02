@@ -1,0 +1,32 @@
+<%= form_with(model: sweet, local: true) do |form| %>
+  <% if sweet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sweet.errors.count, "error") %> prohibited this sweet from being saved:</h2>
+
+      <ul>
+      <% sweet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :sweet_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :sweet_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture, id: :sweet_picture %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sweet.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sweet.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@sweet.picture_url, width: 600) if @sweet.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_sweet_path(@sweet) %> |
+<%= link_to 'Back', sweets_path %>
